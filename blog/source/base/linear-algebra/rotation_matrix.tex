@@ -1,0 +1,199 @@
+\documentclass{article}
+
+\usepackage[margin=0.25in]{geometry}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+\usepgfplotslibrary[external]
+\usepackage{pdfpages}
+\tikzexternalize[shell escape=-enable-write18,prefix=./image/,system call={pdflatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"},up to date check=diff]
+\usetikzlibrary[angles] 
+\usepackage{pgfplots}
+\usetikzlibrary{
+    angles,
+    quotes,
+}
+\pgfplotsset{compat=1.11}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=center,
+        xlabel=$x$,
+        ylabel=$y$,
+        xmin=-2.0,
+        xmax=3.0,
+        ymin=0.0,
+        ymax=3.0,
+        disabledatascaling,
+        axis equal,
+    ]
+    \coordinate (xaxis) at (\pgfkeysvalueof{/pgfplots/xmax},0);
+    \coordinate (origin) at (0,0);
+
+    \addplot[mark=*] coordinates {(1,1)};
+
+    \addplot[mark=*] coordinates {(1.4,0)};
+
+    \addplot [->,blue] coordinates {(0, 0) (2, 2)} coordinate [at end] (x);
+    \addplot [->,blue] coordinates {(0, 0) (-2, 2)} coordinate [at end] (y);
+
+
+    \path (xaxis) -- (origin) -- (x)
+        pic [
+            draw,
+            ->,
+            red,
+            angle radius=10mm,
+            angle eccentricity=1.2,
+            "$\theta$",
+        ] {angle = xaxis--origin--x};
+    
+    \end{axis}
+
+\end{tikzpicture}
+
+$
+    \begin{bmatrix}
+        1\\
+        1
+        \end{bmatrix}
+        $
+
+Rotation matrix:
+$
+R = 
+\begin{bmatrix}
+    \cos(\theta) && -\sin(\theta)\\
+    \sin(\theta) && \cos(\theta)
+    \end{bmatrix}
+    = 
+    \begin{bmatrix}
+        \cos(\pi/4) && -\sin(\pi/4)\\
+        \sin(\pi/4) && \cos(\pi/4)
+        \end{bmatrix}
+    = 
+    \begin{bmatrix}
+        \sqrt{2}/2 && -\sqrt{2}/2\\
+        \sqrt{2}/2 && \sqrt{2}/2
+        \end{bmatrix}
+        $
+
+Location in new coordinates:
+$
+\begin{bmatrix}
+    x\\
+    y
+    \end{bmatrix}
+= R    \begin{bmatrix}
+    1\\
+    1
+    \end{bmatrix}
+=     \begin{bmatrix}
+    \sqrt{2}/2 && -\sqrt{2}/2\\
+    \sqrt{2}/2 && \sqrt{2}/2
+    \end{bmatrix}
+    \begin{bmatrix}
+        1\\
+        1
+        \end{bmatrix}
+=
+        \begin{bmatrix}
+            \sqrt{2}\\
+            0
+            \end{bmatrix}
+$
+
+
+General rotations:
+
+$
+R = R_z(\gamma) R_y(\beta) R_x(\alpha)
+=
+\begin{bmatrix}
+    \cos(\gamma) && -\sin(\gamma) && 0\\
+    \sin(\gamma) && \cos(\gamma) && 0\\
+    0 && 0 && 1
+\end{bmatrix}
+\begin{bmatrix}
+    \cos(\beta) && 0 && \sin(\beta) \\
+    0 && 1 && 0\\
+    -\sin(\beta) && 0 && \cos(\beta)
+\end{bmatrix}
+\begin{bmatrix}
+    1 && 0 && 0 \\
+    0 && \cos(\alpha) && -\sin(\alpha) \\
+    0 && \sin(\alpha) && \cos(\alpha)
+\end{bmatrix}
+$
+
+\section*{Gimble lock}
+
+$
+R = R_z(\alpha) R_y(\beta) R_x(\gamma)
+=
+\begin{bmatrix}
+    \cos(\alpha) && -\sin(\alpha) && 0\\
+    \sin(\alpha) && \cos(\alpha) && 0\\
+    0 && 0 && 1
+\end{bmatrix}
+\begin{bmatrix}
+    \cos(\beta) && 0 && \sin(\beta) \\
+    0 && 1 && 0\\
+    -\sin(\beta) && 0 && \cos(\beta)
+\end{bmatrix}
+\begin{bmatrix}
+    1 && 0 && 0 \\
+    0 && \cos(\gamma) && -\sin(\gamma) \\
+    0 && \sin(\gamma) && \cos(\gamma)
+\end{bmatrix}
+$
+
+$
+R = R_z(\alpha) R_y(\beta) R_x(\gamma)
+=
+\begin{bmatrix}
+    \cos(\alpha) && -\sin(\alpha) && 0\\
+    \sin(\alpha) && \cos(\alpha) && 0\\
+    0 && 0 && 1
+\end{bmatrix}
+\begin{bmatrix}
+    0 && 0 && 1 \\
+    0 && 1 && 0\\
+    -1 && 0 && 0
+\end{bmatrix}
+\begin{bmatrix}
+    1 && 0 && 0 \\
+    0 && \cos(\gamma) && -\sin(\gamma) \\
+    0 && \sin(\gamma) && \cos(\gamma)
+\end{bmatrix}
+$
+
+$
+R = R_z(\alpha) R_y(\beta) R_x(\gamma)
+=
+\begin{bmatrix}
+    0 && 0 && 1 \\
+    \sin(\alpha+\gamma) && \cos(\alpha+\gamma) && 0\\
+    -\cos(\alpha+\gamma) && \sin(\alpha+\gamma) && 1
+\end{bmatrix}
+$
+
+\section*{Quaternion}
+$
+\vec{u} = (u_x, u_y, u_z) = u_x \mathbf{i} + u_y \mathbf{j} + u_z \mathbf{k}
+$
+
+$
+\mathbf{q} = e^{\frac{\theta}{2}(u_x \mathbf{i} + u_y \mathbf{j} + u_z \mathbf{k})}
+= 
+\cos \frac{\theta}{2} + (u_x \mathbf{i} + u_y \mathbf{j} + u_z \mathbf{k}) \sin \frac{\theta}{2}
+$
+
+$
+\mathbf{p}'=\mathbf{q}\mathbf{p}\mathbf{q}^{-1}
+$
+
+\end{document}
