@@ -29,7 +29,7 @@ author = 'Tuan Ngo Van'
 # ones.
 extensions = [
     'myst_parser',
-    'sphinxcontrib.tikz',
+    'sphinx.ext.autosectionlabel',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
