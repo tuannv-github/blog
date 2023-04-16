@@ -1,10 +1,14 @@
 {
     "esbonio.server.logLevel" : "debug",
-    "esbonio.sphinx.buildDir" : "${workspaceFolder}/blog/build/html",
-    "esbonio.sphinx.confDir"  : "${workspaceFolder}/blog/source",
-    "esbonio.sphinx.srcDir": "${workspaceFolder}/blog/source",
+    "esbonio.sphinx.buildDir" : "${workspaceFolder}/ewm/build/html",
+    "esbonio.sphinx.confDir"  : "${workspaceFolder}/ewm/source",
+    "esbonio.sphinx.srcDir"   : "${workspaceFolder}/ewm/source",
     "cSpell.words": [
+        "disp",
+        "EWM",
+        "matplotlib",
         "maxdepth",
+        "quatinv",
         "sphinxcontrib",
         "tikz",
         "toctree"
