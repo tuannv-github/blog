@@ -47,11 +47,42 @@ Ban đầu người ta để giá trị lớn nhất của PID là 32768 (short 
 * **TASK_TRACED** Task đang bị traced bỏi một process khác, ví dự như debuger (gdb).
 * **TASK_STOP** Task đã bị dừng và không thể nào quay lại trang thái **TASK_RUNNING**. Task ở trạng thái này để chờ task cha lấy thông tin trả về . Sau khi process cha lấy đủ thông tin rồi thì task mới chính thức bay màu. 
 
+**Process Context**
+
+Một Process chạy trên Linux sẽ có 2 mode **User Mode** và **Kernel Mode** . Thông thường process sẽ chạy ở **User Mode**. Tuy nhiên, khi process gọi **System Call** hoặc **Trigger Exception** thì process sẽ chuyển qua chạy ở **Kernel Mode**. Khi kernel chạy handler cho system call hay exception nhận được từ process thì ta cũng có thể nói rằng Kernel đang chạy "on behalf of the process" hay đang trong **process context**.
+
+**Process Family Tree**
+
+Các process trong Linux được tổ chức theo quan hệ cha con. **init** process có PID = 1 và là process duy nhất không có process cha. Tất cả các process khác đều là con cháu của **init** process. Mỗi process đó sẽ có 1 process cha và 0 hoặc một số process con. Trong process descriptor sẽ có một pointer trỏ tới process cha và một list các con trỏ trỏ tới process con của nó.
+
+Kernel process sẽ là process con của **kthreadd** (PID=2). Để  list các process của kernel ta dùng câu lệnh sau:
+
+.. code:: bash
+
+    ps --ppid 2 -o uname,ppid,pid,cmd
+
 Process Creation
 ****************
 
+Đa phần các hệ điều hành sẽ implement một có chế **spawn** để tạo ra một process mới.
+Tuy nhiên, đối với Unix system trong đó có Linux, để tạo ra một process mới cần thực hiện hai bước:
+
+* **fork()**: Tạo ra một process con là copy của process hiện tại.
+* **exec()**: Load chương trình lên RAM và thực hiện chương trình đó.
+
+**Copy-on-Write**
+
+Khi thực hiện lệnh **fork()**, tất cả các tài nguyên của process cha sẽ được duplicated cho process con. Nếu implement một cách ngây thơ (naive) thì copy kiểu này sẽ rất không hiệu quả vì phải copy quá nhiều thứ mà có khi không cần dùng đến sau này. Trong trường hợp chạy luôn chương trình mới thì coi như mất công copy qua gần không dùng được gì cả. Do đó, **fork()** của Linux implement một cơ chế gọi là **Copy-on-Write**, tức là chỉ thực hiện copy ra chỗ khác khi cần write, còn nếu không đụng tới hoặc chỉ read thui thì không cần copy chi cho tốn công.
+
+Đơn vị nhỏ nhất của **Copy-on-Write** là page. Tức là nếu cần write vào một byte trong page thì cũng phải copy cả page.
+
+
+**Forking**
+
+**vfork()**
+
 Linux implementation of Threads
-*************
+*******************************
 
 Process Termination
-*************
+*******************
