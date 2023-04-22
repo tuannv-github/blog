@@ -1,6 +1,8 @@
 Process Management
 #############
 
+Tài liệu tham khảo: **Linux Kernel Development** (3rd Edition)
+
 **Khái niệm**
 
 Một process là một chương trình đang được thực thi (execute) và những tài nguyên được sử dụng bởi chương trình đang thực thi đó.
@@ -79,10 +81,32 @@ Khi thực hiện lệnh **fork()**, tất cả các tài nguyên của process 
 
 **Forking**
 
-**vfork()**
+Linux implement **fork** thông qua **CLONE** system call, tức là khi gọi hàm **fork()** trong **C** thì bản chất là ta đang gọi system call **CLONE** thông qua hàm cung cấp bởi thư viện **glibc** của ngôn ngữ lập trình **C**.
+
+Tùy thuộc vào tham số được truyền vào khi gọi system call **CLONE** mà process mới và process cha sẽ dùng chung hoặc không một số tài nguyên nhất định. Ví dụ như để tạo ra thread với thì **CLONE** ra process mới chia sẻ chung memory với process cha.
+
+System call **CLONE** được handle bởi hàm **do_fork()**, hàm **do_fork()** làm một số công việc chính như sau:
+
+* Duplicate task descriptor từ task cha qua task con.
+* Check resouce limit: số lượng task tối đa được sở hữu bởi một user.
+* Cập nhật của thông số của task descriptor cuả task con cho phù hợp với yêu cầu của task mới.
+* Tạo PID cho task con.
+* Duplicate hoặc tạo mới cái resouces của task con: open file system, signal hanlder, process address space, namespace.
+* Clean và trả lại pointer trỏ tới task con.
+
+Sau khi được clone thành công, để tối ưu, process con thường được chạy trước process cha. Thông thường, process sẽ exec một chương trình mới ngay sau khi được fork ra thành công. Do đó, nếu process cha chạy trước và process cha có ghi dữ liệu thì cơ chế **COPY-ON-WRITE** được kích hoạt và dữ liệu được copy để write. Nếu process cha chạy sau khi process con đã exec một program mới thì không cần phải copy on write.
 
 Linux implementation of Threads
 *******************************
+Multi thread programing là một kỹ thuật qua trọng trong lập trình. Linux có cách implement thread không giống với MS Windows và Sun Solaris. 
+
+Trong Linux kernel, không có khái niệm Thread. Linux coi Thread như là những process thông thường khác. Linux không có struct nào dành riêng cho thread cũng như không cung cấp cơ chế schedule đặc biệt cho thread. Thread đơn giản chỉ là một process mà process đó chia sẻ một số tài nguyên nhất định với process khác. Các tài nguyên đó thông thường là không gian địa chỉ bộ nhớ, các files đang được mở,...
+
+Cách tiếp cận này rất khác với MS Windows và Sun Solaris. Hai hệ điều hành này có cơ chế đặc biệt dành cho thread. Thread ở hai hệ điều hành này thường được xem là **lightweight process**. Cụm từ **lightweight** process cho thấy sự khác biệt trong triết lý về thread giữa Linux và các hệ thống khác. Giả sử ta có một Process có 4 thread. Trong hệ thống có cơ chế đặc biệt cho thread, ta sẽ có một process descriptor chứa 4 pointer point tới 4 thread. Process descriptor sẽ chứa thông tin chia sẻ bởi 4 thread, còn các thông tin riêng của từng thread thì được lưu trong struct riêng của từng thread đó. Ngược lại, trong Linux, cả 4 thread đều có process descriptor riêng và được cấu hình để chia sẻ một số tài nguyên nhất định.
+
+**Tạo Thread mới**
+
+**Kernel Threads**
 
 Process Termination
 *******************
