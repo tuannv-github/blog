@@ -106,6 +106,32 @@ Cách tiếp cận này rất khác với MS Windows và Sun Solaris. Hai hệ �
 
 **Tạo Thread mới**
 
+Thread được tạo bằng system call **CLONE** giống như một task thông thường. Tuy nhiên, một số  cờ được bật để chia sẻ tài nguyên giữa task cha và task con, tạo ra khái niệm thread.
+
+.. code:: C
+
+    clone(CLONE_VM | CLONE_FS | CLONE_FILES | CLONE_SIGHAND, 0);
+
+Để tạo ra thread thì các tài nguyên được chia sẻ là:
+
+* Address space :code:`CLONE_VM`
+* File system information :code:`CLONE_FS`
+* File descriptors :code:`CLONE_FILES`
+* Signal hanlder :code:`CLONE_SIGHAND`
+
+Process thông thường được clone bằng:
+
+.. code:: C
+
+    clone(SIGCHILD, 0);
+
+Dưới đây là danh sách một số flag dùng được cho hàm :code:`clone()` và ý nghĩa của từng flag đó.
+
+.. image:: imgs/linux_clone_flags.png
+    :width: 600
+    :name: Process State Machine
+
+
 **Kernel Threads**
 
 Process Termination
