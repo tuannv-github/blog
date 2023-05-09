@@ -134,5 +134,30 @@ Dưới đây là danh sách một số flag dùng được cho hàm :code:`clon
 
 **Kernel Threads**
 
+Kernel thread là một task chỉ tồn tại trong kernel space, thường được dùng để  chạy một số task trong background. Sự khác biệt chính giữa Kernel Thread và Process thông thường là Kernel Thread không có không gian địa chỉ (con trỏ :code:`mm` trong struct là :code:`NULL`). Kernel Thread chỉ chạy trong kernel-space, không có context swicth qua user-space. Kernel Thread được scheduler schedule như là một task thông thường, không có sự phân biệt với các task khác.
+
+Trong Linux Kernel, kernel thread thường được sử dụng để làm task phụ, nhằm mục đích hoàn thành một số  nhiệm vụ nhất định trong trong khi task chính tiếp tục chạy, điển hình như **flush** (đẩy dữ liệu trong buffer ra thiết bên ngoài như hardrive, network module) và **ksoftirqd** (handle interrupt trong thread thay vì trong hardware interrupt handler).
+
+Kernel thread chỉ có thể được tạo ra bởi một kernel thread. Kernel thread đầu tiên là là **kthreadd**. **kthreadd** có thường có pid là 2 và có parent ID là 0, nghĩa là không có thread cha.
+
+Có thể  liệt kê các kernel thread bằng command sau:
+
+.. code:: bash 
+
+    ps -ef
+
+
 Process Termination
-*******************
+********************
+
+
+Khi process được terminate thì:
+ *  Clear resources sử  dụng bởi process
+ *  Thông báo cho process cha.
+
+Sau khi hoàn thành 2 công việc trên thì process vào trạng thái **EXIT_ZOMBIE**. Lúc này task không còn có thể được schedule nhưng vẫn còn giữ **pid**. Sau khi parent của task handle các một số thông tin về  task hoặc notify kernel rằng nó không quan tâm thì tất cả các dữ liệu của task mới được xóa hoàn toàn và **pid** được trả lại để cho task khác sử dụng.
+
+ 
+**Dilemma of Parentless Task**
+
+Trong trường hợp process cha exit trước process con thì chúng ta cần một cơ chế  để **reparent** các process con để  các process con nhận parent mới. Linux sẽ sử dụng một process khác trong cùng thread group hoặc **init** process (trong trường hợp cách làm trước fail) để làm cha mới cho những đứa trẻ mồ côi.

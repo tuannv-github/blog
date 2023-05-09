@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'EWM'
-copyright = '2023, Tuan Ngo Van'
+copyright = '2023, Tuan Ngo Van @ tuannv.email@gmail.com'
 author = 'Tuan Ngo Van'
 
 
