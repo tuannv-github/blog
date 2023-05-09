@@ -13,6 +13,7 @@ Engineering With Me!
    :maxdepth: 1
    :caption: Linux
 
+   01_linux/kernel_space/03_process_management
    01_linux/kernel_space/04_process_scheduling
 
 .. toctree::
