@@ -5,7 +5,10 @@ build:
   tools:
     python: "3.11"
 
+sphinx:
+   configuration: ewm/source/conf.py
+  
 python:
   install:
   - requirements:
-      requirements.txt
+      ewm/source/requirements.txt
