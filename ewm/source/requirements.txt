@@ -1,2 +1,2 @@
+readthedocs-sphinx-ext
 myst_parser
-sphinx.ext.autosectionlabel
