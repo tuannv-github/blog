@@ -56,3 +56,9 @@ html_static_path = ['_static']
 latex_elements = {
     'preamble': '\\usepackage{tikz}',
 }
+
+html_theme_options = {
+  # "navigation_depth": 1,
+  # "show_nav_level": 0,
+  # "collapse_navigation": True
+}
