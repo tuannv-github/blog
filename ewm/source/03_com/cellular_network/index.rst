@@ -1,4 +1,4 @@
-Wireless Network
+Cellular Network
 ================
 
 .. toctree::

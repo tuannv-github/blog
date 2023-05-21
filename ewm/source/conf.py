@@ -30,6 +30,7 @@ author = 'Tuan Ngo Van'
 extensions = [
     'myst_parser',
     'sphinx.ext.autosectionlabel',
+    'nbsphinx',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

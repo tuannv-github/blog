@@ -1,4 +1,4 @@
-Sensors
+PX4-ECL
 =======
 
 .. toctree::
