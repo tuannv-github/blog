@@ -1,3 +1,4 @@
+ipython
 readthedocs-sphinx-ext
 myst_parser
 nbsphinx
