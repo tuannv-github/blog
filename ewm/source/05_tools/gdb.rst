@@ -81,5 +81,5 @@ GDB commands
      - Call a function with gdb
      - :code:`call lookup_student(student_id)`
    * - :code:`set <variable>=<value>`
-     - Call a function with gdb
+     - Change variable value using gdb
      - :code:`set age=20`
