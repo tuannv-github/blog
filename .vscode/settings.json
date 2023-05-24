@@ -5,6 +5,7 @@
     "esbonio.sphinx.srcDir"   : "${workspaceFolder}/ewm/source",
     "cSpell.words": [
         "autosectionlabel",
+        "coredump",
         "disp",
         "EWM",
         "matplotlib",
