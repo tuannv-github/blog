@@ -2,9 +2,8 @@ Tools
 =====
 
 .. toctree::
-   :maxdepth: 1
 
    gdb
    valgrind
-   
- 
+   docker/index
+   git
