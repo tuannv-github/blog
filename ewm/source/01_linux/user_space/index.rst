@@ -6,3 +6,4 @@ User Space
 
    commands/index
    programming_interface/index
+   misc/index

@@ -4,16 +4,22 @@
     "esbonio.sphinx.confDir"  : "${workspaceFolder}/ewm/source",
     "esbonio.sphinx.srcDir"   : "${workspaceFolder}/ewm/source",
     "cSpell.words": [
+        "asyncio",
         "autosectionlabel",
         "coredump",
         "disp",
         "EWM",
+        "imgs",
+        "mathbf",
         "matplotlib",
         "maxdepth",
+        "nbsphinx",
+        "netcat",
         "quatinv",
         "sphinxcontrib",
         "tikz",
-        "toctree"
+        "toctree",
+        "valgrind"
     ],
     "esbonio.sphinx.numJobs": 6,
     "latex-workshop.latex.tools": [
