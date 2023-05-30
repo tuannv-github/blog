@@ -1,4 +1,6 @@
 ipython
+sphinx-rtd-theme
 readthedocs-sphinx-ext
 myst_parser
+pandoc
 nbsphinx
