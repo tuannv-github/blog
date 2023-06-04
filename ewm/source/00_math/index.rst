@@ -7,3 +7,5 @@ Mathematics
     quaternion
     active_passive_rotation
     svd
+    ecl
+    kalman_filter/index
