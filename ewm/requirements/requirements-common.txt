@@ -1,0 +1,8 @@
+ipython
+sphinx-rtd-theme
+sphinxawesome-theme
+readthedocs-sphinx-ext
+myst_parser
+pandoc
+nbsphinx
+sphinx_gallery
