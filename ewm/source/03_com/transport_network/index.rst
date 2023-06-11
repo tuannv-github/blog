@@ -4,6 +4,8 @@ Transport Network
 .. toctree::
    :maxdepth: 1
 
+   pfm
+
    10_ospf
    20_bfd
    21_ldp

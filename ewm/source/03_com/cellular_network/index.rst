@@ -2,6 +2,5 @@ Cellular Network
 ================
 
 .. toctree::
-   :maxdepth: 1
 
-   5g
+   5g/index
