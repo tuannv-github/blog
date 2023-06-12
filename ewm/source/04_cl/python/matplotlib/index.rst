@@ -1,0 +1,7 @@
+==========
+Matplotlib
+==========
+
+.. toctree::
+
+    animation.ipynb
