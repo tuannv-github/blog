@@ -1,0 +1,7 @@
+========
+Robotics
+========
+
+.. toctree:: 
+    
+    localization/index

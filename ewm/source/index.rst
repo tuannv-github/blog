@@ -1,7 +1,8 @@
-Engineering With Me!haha
-================================
+===================
+Engineering With Me
+===================
 
-Welcome to my personal page (-.-)
+Welcome to Engineering With Me!
 
 .. toctree::
 
@@ -9,5 +10,8 @@ Welcome to my personal page (-.-)
    01_linux/index
    02_sensor/index
    03_com/index
-   04_python/index
+   04_cl/index
    05_tools/index
+   06_robotics/index
+   07_DSA/index
+   08_CV/index

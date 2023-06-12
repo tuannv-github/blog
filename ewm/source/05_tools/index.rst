@@ -8,3 +8,4 @@ Tools
    docker/index
    git
    ssh
+   octave

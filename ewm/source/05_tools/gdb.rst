@@ -117,3 +117,18 @@ Tells gdb whether to detach one of the processes after a fork, or retain debugge
   show detach-on-fork
 
 Show whether detach-on-fork mode is on/off.
+
+GDB with program arguments
+==========================
+
+On-start gdb:
+
+.. code-block:: 
+
+  gdb --args executablename arg1 arg2 arg3
+
+After gdb has been started:
+
+.. code-block:: 
+
+  set args arg1 arg2 arg3
