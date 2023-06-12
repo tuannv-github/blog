@@ -7,3 +7,4 @@ Tools
    valgrind
    docker/index
    git
+   ssh
