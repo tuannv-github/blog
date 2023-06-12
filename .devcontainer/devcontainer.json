@@ -25,7 +25,8 @@
 				"lextudio.restructuredtext",
 				"trond-snekvik.simple-rst",
 				"mhutchie.git-graph",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"ms-toolsai.jupyter"
 			]
 		}
 	},
