@@ -1,2 +1,6 @@
 -r ./requirements-common.txt
 esbonio
+matplotlib
+ipykernel
+scipy
+imageio
