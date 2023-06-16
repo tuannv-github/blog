@@ -7,3 +7,4 @@ Python
    asyncio/index
    sphinx/index
    matplotlib/index
+   heap/index
