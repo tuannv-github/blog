@@ -9,3 +9,4 @@ User Space
    misc/index
    bash/index
    zsh/index
+   rsyslog/index

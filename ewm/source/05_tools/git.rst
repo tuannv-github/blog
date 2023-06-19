@@ -50,3 +50,48 @@ Merge
 
 Pull
 ====
+
+Clean
+=====
+
+Remove untracked files from the working tree
+
+.. code-block::
+
+    git clean -n
+
+.. list-table::
+    
+    * - Options
+      - Shorten
+      - Description
+    * - :code:`--dry-run`
+      - :code:`-n`
+      - Don’t actually remove anything, just show what would be done.
+    * - :code:`--force`
+      - :code:`-f`
+      - If the Git configuration variable clean.requireForce is not set to false, git clean will refuse to delete files or directories unless given -f or -i.
+    * - 
+      - :code:`-x`
+      - Don’t use the standard ignore rules
+    * - 
+      - :code:`-X`
+      - Remove only files ignored by Git
+    * - 
+      - :code:`-d`
+      - Normally, when no <pathspec> is specified, git clean will not recurse into untracked directories to avoid removing too much. Specify -d to have it recurse into such directories as well.
+
+Reset
+=====
+Reset current HEAD to the specified state
+
+.. code-block::
+
+    [Dangerous] git reset --hard
+
+[Dangerous] Clear all changes
+=============================
+.. code-block::
+
+    git reset --hard
+    git clean -fdx
