@@ -48,6 +48,31 @@ Fetch master branch from remote named origin
 Merge
 =====
 
+.. code-block::
+
+    git merge [-n] [--stat] [--no-commit] [--squash] [--[no-]edit]
+      [--no-verify] [-s <strategy>] [-X <strategy-option>] [-S[<keyid>]]
+      [--[no-]allow-unrelated-histories]
+      [--[no-]rerere-autoupdate] [-m <msg>] [-F <file>]
+      [--into-name <branch>] [<commit>…​]
+    git merge (--continue | --abort | --quit)
+
+.. code-block::
+
+          A---B---C topic
+         /
+    D---E---F---G master
+
+.. code-block:: bash
+
+  (master)# git merge topic
+
+.. code-block::
+
+          A---B---C topic
+         /         \
+    D---E---F---G---H master
+
 Pull
 ====
 
