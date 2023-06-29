@@ -6,3 +6,4 @@ Miscellaneous
 
     file_system
     group
+    alias
