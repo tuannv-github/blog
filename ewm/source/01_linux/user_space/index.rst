@@ -10,3 +10,4 @@ User Space
    bash/index
    zsh/index
    rsyslog/index
+   datetime/index
