@@ -1,5 +1,5 @@
 ====
-HEAP
+Heap
 ====
 
 .. toctree:: 

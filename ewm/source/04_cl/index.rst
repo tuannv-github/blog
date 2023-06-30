@@ -6,3 +6,4 @@ Computer Language
 
    python/index
    cpp/index
+   robot/index
