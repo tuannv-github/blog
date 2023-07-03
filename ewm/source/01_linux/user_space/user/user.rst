@@ -49,6 +49,3 @@ Who am I and What groups I belong to?
 
   whoami
   groups
-
-User capabilities
------------------
