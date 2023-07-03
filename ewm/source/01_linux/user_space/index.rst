@@ -11,3 +11,5 @@ User Space
    zsh/index
    rsyslog/index
    datetime/index
+   ps/index
+   user/user
