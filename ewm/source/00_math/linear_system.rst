@@ -2,8 +2,6 @@
 Linear system
 =============
 
-Linear system
-=============
 Deterministic linear system can be described by the equations
 
 .. math:: 

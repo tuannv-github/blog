@@ -9,3 +9,6 @@ Mathematics
     svd
     ecl
     kalman_filter/index
+    matrix/index
+    euler_formula
+    linear_system

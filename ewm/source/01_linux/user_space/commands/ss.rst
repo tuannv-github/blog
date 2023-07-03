@@ -2,13 +2,13 @@
 ss
 ==
 
-Options
-=======
-
 :code:`ss` is used to dump socket statistics.
 
 * It allows showing information similar to netstat.
 * It can display more TCP and state information than other tools.
+
+:code:`ss` options
+==================
 
 .. list-table::
    :header-rows: 1
@@ -56,8 +56,8 @@ Output Description
    * - Peer address:port
      - Address of remote machine and port.
 
-Examples
-========
+:code:`ss` examples
+===================
 
 List Unix domain socket with process info using such sockets.
 
