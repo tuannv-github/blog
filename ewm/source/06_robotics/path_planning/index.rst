@@ -6,3 +6,4 @@ Path Planning
 .. toctree:: 
 
     dijkstra
+    
