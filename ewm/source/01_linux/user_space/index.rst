@@ -6,6 +6,7 @@ User Space
 
    man
    alias
+   du
    fs/index
    user/user
    shell/index
