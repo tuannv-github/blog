@@ -1,5 +1,5 @@
 =====
-alias
+Alias
 =====
 
 Aliases don't take arguments. With an alias like :code:`alias foo='echo $1'`, the :code:`$1` will be expanded by the shell to the shell's first argument (which is likely nothing) when the alias is run.

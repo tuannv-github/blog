@@ -1,4 +1,7 @@
-==================
+====
+Bash
+====
+
 Bash custom prompt
 ==================
 
@@ -18,8 +21,8 @@ Bash custom prompt
    * - PS4
      - The value of this parameter is expanded as with PS1 and the value is printed before each command bash displays during an execution trace. The first character of PS4 is replicated multiple times, as necessary, to indicate multiple levels of indirection. The default is +.
 
-Examples
-========
+Custom prompt examples
+----------------------
 
 PS0
 ---
