@@ -31,3 +31,9 @@ report a snapshot of the current processes.
     ps -eF
     ps -ely
 
+Ignore kernel thread
+
+.. code-block:: 
+
+  ps --ppid 2 -p 2 --deselect
+

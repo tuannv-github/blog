@@ -7,6 +7,7 @@ User Space
    man
    alias
    du
+   apt
    fs/index
    user/user
    shell/index

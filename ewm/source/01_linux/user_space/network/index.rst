@@ -6,3 +6,5 @@ Network
 
    netcat
    ss
+   socket_options
+   proc_interface

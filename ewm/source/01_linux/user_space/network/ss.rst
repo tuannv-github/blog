@@ -22,6 +22,9 @@ ss
    * - :code:`-u`
      - :code:`--udp`
      - Display UDP sockets.
+   * - :code:`-w`
+     - :code:`--raw`
+     - Display RAW sockets.
    * - :code:`-x`
      - :code:`--unix`
      - Display Unix domain sockets (alias for -f unix).
