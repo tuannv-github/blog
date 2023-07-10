@@ -20,8 +20,8 @@ Instructions
 
 * SSH login using ssh private key.
 
-Examples
-========
+SSH Examples
+============
 
 VSCode
 
