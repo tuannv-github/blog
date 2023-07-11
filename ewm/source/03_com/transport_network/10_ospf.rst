@@ -1,11 +1,5 @@
+====
 OSPF
-=============
+====
 
-
-Neighbor 1
-********
-Hi
-
-Neighbor 2
-********
-Hii
+.. image:: imgs/OSPF-States-Infographic-1.png
