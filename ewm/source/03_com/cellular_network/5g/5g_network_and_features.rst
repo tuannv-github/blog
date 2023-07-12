@@ -87,3 +87,37 @@ Network Slicing
 .. image:: imgs/nw_embb_slice.png
 
 Splitting resources to network slices enables the ability to serve different use cases on the same network.
+
+SDN and NFV
+===========
+
+* SDN is an emering network architecture:
+ 
+  * Network control functions/tasks are decoupled from network devices/boxes
+  * Migration of control, from individual netowrk devices/boxes into accessible distributed computing devices/functions.
+  * Underlying infrastructure can be abstracted for different applications and network services.
+
+* Benifits:
+
+  * Centralized management and control of Network devices
+  * Rapid innovation on new network capabilities and services
+  * Programmability by different users and developers
+  * Increase network reliability and security 
+  * More granular network control
+
+* Network Function Virtualization
+
+  * Up to 4G, network require specialized software running on specialized hardware
+  * NFV aims transform network architecture:
+
+    * Involves implementation of network functions (NF) in software
+    * NFs can run on a range of industry-standard server hardware
+    * NFs can resides in a cloud, instead of on the operator premises.
+
+* Benifits:
+
+  * Decouple software from hardware
+  * Flexible, scalable, dynamic network deployments
+  * Cost-effetive operation
+
+.. image:: imgs/nfv.png
