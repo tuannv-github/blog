@@ -10,6 +10,7 @@ User Space
    apt
    cron
    fifo
+   pam
    fs/index
    user/user
    shell/index

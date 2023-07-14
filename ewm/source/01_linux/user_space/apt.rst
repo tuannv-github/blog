@@ -117,3 +117,10 @@ Reinstall package
 .. code:: bash
 
     apt --reinstall install package-name
+
+Cache
+-----
+
+.. code:: 
+
+    /var/cache/apt
