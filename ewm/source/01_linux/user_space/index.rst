@@ -8,6 +8,8 @@ User Space
    alias
    du
    apt
+   cron
+   fifo
    fs/index
    user/user
    shell/index

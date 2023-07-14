@@ -4,7 +4,7 @@ APT
 
 http://www.ibiblio.org/gferg/ldp/giles/repository/repository-2.html
 
-The Sources.list entry
+The sources.list Entry
 ======================
 
 /etc/apt/sources.list.d
@@ -26,8 +26,11 @@ The Sources.list entry
 * **distribution** is usually stable, frozen or unstable for official Debian releases
 * **omponent** is usually main, contrib or non-free in official Debian releases
 
+Apt Server
+==========
+
 Package directory structure
-===========================
+---------------------------
 
 .. code-block:: 
 
@@ -53,8 +56,7 @@ Package directory structure
                                             ...
                                             /Release
 
-Apt server example
-==================
+
 
 * Base: http://ftp.debian.org/debian/
 * Distribution: stable
@@ -91,3 +93,27 @@ Packages.gz
 * Relative link: /debian/pool/main/k/khronos-opencl-headers
 
 .. image:: imgs/deb_path.PNG
+
+Apt Utils
+==========
+
+Search for packages
+-------------------
+
+.. code:: bash
+
+    apt search package-name
+
+Package info
+------------
+
+.. code:: bash
+
+    apt show package-name
+
+Reinstall package
+-----------------
+
+.. code:: bash
+
+    apt --reinstall install package-name

@@ -82,7 +82,7 @@ Group Creation
 
   groupadd secondarygroup
 
-While a user account can be part of multiple groups, one of the groups is always the “primary group” and the others are “secondary groups”. The user’s login process and files and folders the user creates will be assigned to the primary group.
+While a user account can be part of multiple groups, one of the groups is always the **primary group** and the others are **secondary groups**. The user’s login process and files and folders the user creates will be assigned to the primary group.
 
 .. code-block:: bash
 
