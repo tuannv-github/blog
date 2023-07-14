@@ -219,8 +219,8 @@ Multiple facilities
     return 0;
   }
 
-Rsyslog Rotate (logrotate)
-==========================
+Rsyslog Rotate
+==============
 
 **logrotate** is designed to ease administration of systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files. Each log file may be handled daily, weekly, monthly, or when it grows too large.
 
@@ -231,3 +231,50 @@ Normally, **logrotate** is run as a daily cron job.  It will not modify a log mo
   logrotate [--force] [--debug] [--state file] [--skip-state-lock]
        [--wait-for-state-lock] [--verbose] [--log file] [--mail command]
        config_file [config_file2 ...]
+
+Log everything to the destination file **/var/log/log_rotation.log** until the give file size of 50 MB is reached.
+
+rlogrotatetest.conf
+--------------------------
+
+.. code-block:: bash
+
+  # start log rotation via outchannel
+  # outchannel definition
+  $outchannel logrotateoutchannel, /var/log/logrotatetest.log, 5000, /root/logrotatetest.sh
+  #  activate the channel and log everything to it
+  if ($programname == "logrotatetest") then 
+  {
+    local3.*   :omfile:$logrotateoutchannel
+  }
+  # end log rotation via outchannel
+
+logrotatetest.conf
+------------------
+
+.. code:: bash
+
+  compress 
+
+  /var/log/logrotatetest.log {
+    su root root
+    daily
+    rotate 7
+    size 5000
+    postrotate
+      service rsyslog rotate
+    endscript
+  }
+
+logrotatetest.sh
+----------------
+
+.. code-block:: bash
+
+  #!/bin/bash
+  date >> /tmp/logrotatetest
+  logrotate logrotatetest.conf >> /tmp/logrotatetest 2>&1
+
+.. code-block:: bash
+
+  logger -p local3.notice -t "logrotatetest" "Hello logrotatetest"
