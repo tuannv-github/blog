@@ -121,3 +121,24 @@ SDN and NFV
   * Cost-effetive operation
 
 .. image:: imgs/nfv.png
+
+Mobile Edge Computing (MEC)
+===========================
+
+Egde computing brings compute, storage, and networking resources closer to applications, devices, and users.
+
+* Shift of resources from centralized data centers far away from end user to the network edge.
+* Can faciliate services with strict latency, security, and bandwidth requirements.
+* SDN, NFV, and 5G technologies promote the development of edge computing
+
+Traditional Topology
+--------------------
+
+.. image:: imgs/mec_no.png
+
+Mobile Edge Topology
+--------------------
+.. image:: imgs/mec.png
+
+Edge Computing is a broader concept not tied to, or dependent on, a specific generation of cellular communication.
+
