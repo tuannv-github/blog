@@ -20,3 +20,4 @@ User Space
    logging/index
 
    lpi/index
+   display_server
