@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base
+FROM mcr.microsoft.com/devcontainers/python:3.11-bullseye
 
 # Install application
 RUN apt update
