@@ -69,7 +69,7 @@ eMBB (Enhanced Mobile Broadband)
 * Operation in macro and small cells
 * Support for high-speed mobility up to 500kmph
   
-MMTC (Massive Machine Type Communucations)
+MMTC (Massive Machine Type Communications)
 ==========================================
 
 * Connecting not just people, but their worlds.
