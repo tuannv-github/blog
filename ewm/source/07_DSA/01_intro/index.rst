@@ -203,3 +203,25 @@ There exist positive constants :math:`c` and :math:`n_0` such that :math:`0 \le 
 :math:`0 < 5n^2 \le 5n^2 = f(n)`, for all :math:`n \ge 1`
 
 :math:`5n^2 = \Omega(n^2)` with :math:`c=5` and :math:`n_0=1`
+
+:math:`\Theta` Notation
+=======================
+
+.. image:: imgs/theta_definition.png
+
+:math:`\Theta` Examples
+-----------------------
+
+**Example-1**: Find :math:`\Theta` bound for :math:`f(n) = \frac{n^2}{2} - \frac{n}{2}`
+
+**Solution**:
+
+:math:`\frac{n^2}{5} \le \frac{n^2}{2} - \frac{n}{2} \le n^2`, for all :math:`n \ge 2`
+
+:math:`\frac{n^2}{2} - \frac{n}{2} = \Theta(n^2)` with :math:`c_1 = 1/5`, :math:`c_2 = 1` and :math:`n_0 = 2`
+
+Why is it called Asymtotic Analysis?
+====================================
+
+:math:`g(n)` is also a curve which approximates :math:`f(n)` at higher values of :math:`n`.
+
