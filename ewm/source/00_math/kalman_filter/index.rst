@@ -4,6 +4,6 @@ Kalman Filter
 
 .. toctree:: 
 
-    kalman_filter
-    ekf
+    formula_kf
+    formula_ekf
     linear_system_theory

@@ -1,6 +1,6 @@
-======================
-Extended Kalman Filter
-======================
+==============================
+Extended Kalman Filter Formula
+==============================
 
 1. The system and measurement equations are given as follows:
 
