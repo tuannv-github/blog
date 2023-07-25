@@ -21,3 +21,5 @@ User Space
 
    lpi/index
    display_server
+   display_client
+   desktop_enviroment

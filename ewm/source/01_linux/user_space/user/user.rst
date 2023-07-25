@@ -39,11 +39,34 @@ Groups & Users
 
 .. image:: imgs/etc_passwd.jpg
 
-.. image:: imgs/etc_shadow.jpg
-
 The gecos field, or GECOS field is a field in each record in the :code:`/etc/passwd` file on Unix and similar operating systems. It is typically used to record general information about the account or its user(s) such as their real name and phone number.
 
 **GECOS** General Electric Comprehensive Operating System
+
+.. code-block:: 
+
+    cat /etc/shadow
+
+.. image:: imgs/etc_shadow.jpg
+
+ID of the algorithm used:
+
+.. list-table:: 
+  
+  * - Value
+    - Description
+  * - :code:`$1$`
+    - MD5
+  * - :code:`$2$`
+    - Blowfish
+  * - :code:`$3$`
+    - Blowfish
+  * - :code:`$4$`
+    - SHA-256
+  * - :code:`$5$`
+    - SHA-512
+  * - :code:`$6$`
+    - yescrypt
 
 Who am I and What groups I belong to?
 -------------------------------------
@@ -108,3 +131,28 @@ While a user account can be part of multiple groups, one of the groups is always
   * - :code:`--gid`
     - :code:`-g`
     - The name or numerical ID of the user's new primary group. The group must exist.
+
+login.defs
+==========
+
+.. code-block:: 
+
+  cat /etc/login.defs
+
+  #
+  # Min/max values for automatic uid selection in useradd
+  #
+  UID_MIN                  1000
+  UID_MAX                 60000
+  # System accounts
+  #SYS_UID_MIN              100
+  #SYS_UID_MAX              999
+
+  #
+  # Min/max values for automatic gid selection in groupadd
+  #
+  GID_MIN                  1000
+  GID_MAX                 60000
+  # System accounts
+  #SYS_GID_MIN              100
+  #SYS_GID_MAX              999

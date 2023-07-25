@@ -50,6 +50,11 @@ Problems
 
 In general, the X server is now just a middle man that introduces an extra step between applications and the compositor and an extra step between the compositor and the hardware.
 
+.. image:: imgs/Schema_of_the_layers_of_the_graphical_user_interface.svg
+
+* Window manager just instructs the display server, and the display server does the actual operations.
+* Another important feature that a window manager may have is window compositing. If it has this feature, then it's called a window compositor. 
+
 Wayland
 =======
 
@@ -62,3 +67,16 @@ Link https://wayland-book.com/
 3. As in the X case, when the client receive the event, it updates the UI in response. But in the Wayland case, the rendering happens in the client, and the client just sends a request to the compositor to indicate the region that was updated.
 4. The compositor collects damage requests from its clients and then recomposites the screen. The compositor can then directly issue and ioctl to schedule a pageflip in KMS.
 
+
+**Xwayland** is an X server for running X clients under Wayland.
+
+.. image:: imgs/wayland.png
+
+Display Manager
+===============
+
+Link: https://learning.lpi.org/en/learning-materials/102-500/106/106.1/106.1_01/
+
+.. image:: imgs/x_window_system_architecture.png
+
+A display manager provides a graphical login to a system. This system can either be a local computer or a computer across a network. The display manager is launched after the computer boots and will start an X server session for the authenticated user. The display manager is also responsible for keeping the X server up and running. Example display managers include GDM, SDDM and LightDM.
