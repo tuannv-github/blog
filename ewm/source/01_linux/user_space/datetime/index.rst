@@ -70,6 +70,16 @@ Command :code:`date` print or set the system date and time
                   NTP service: active
               RTC in local TZ: no
 
+* Set system datetime
+
+.. code-block:: 
+
+    date -s "STRING"
+    date --set="STRING"
+
+    date -s "2 OCT 2006 18:00:00"
+    date --set="2 OCT 2006 18:00:00"
+
 Coordinated Universal Time
 ==========================
 

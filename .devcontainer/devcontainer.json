@@ -18,6 +18,7 @@
 		"ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {},
 		"ghcr.io/devcontainers/features/git:1": {}
 	},
+
 	"customizations": {
 		"vscode": {
 			"extensions": [

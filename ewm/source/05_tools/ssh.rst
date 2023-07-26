@@ -2,6 +2,9 @@
 SSH
 ===
 
+* **Public Key** is sent to the server. Typically with the ssh-copy-id utility
+* **Private Key** stays with the user (and only there)
+
 SSH login using private key
 ===========================
 .. code-block:: 
