@@ -1,5 +1,6 @@
+==================
 Process Management
-##################
+==================
 
 Tài liệu tham khảo: **Linux Kernel Development** (3rd Edition)
 
@@ -41,7 +42,6 @@ Ban đầu người ta để giá trị lớn nhất của PID là 32768 (short 
 
 .. image:: imgs/task_state_machine.png
     :width: 600
-    :name: Process State Machine
 
 * **TASK_RUNNING** Task đang chạy hoặc đang chờ được chạy trong queue.
 * **TASK_INTERRUTABLE** Task đang ngủ, chờ một điều kiện nào đó để chạy tiếp ví dụ như ghi xong dữ liệu xuống hard drive hoặc nhận signal.

@@ -20,12 +20,16 @@ Process Scheduling
 		* system will no longer feel as if applications are concurrently executed
 	* Too short timeslice:
 		* significant amount of processor time to be wasted on the overhead of switching processs
- * CFS: Complete Fair Scheduling
-	 * Attempt to give all processes a fair share of the processor
+
+* CFS: Complete Fair Scheduling
+	* Attempt to give all processes a fair share of the processor
+
 * Schedule class:
 	* Base schedule code iterate over each scheduler class in order of priority: kernel/sched.c
 	* CFS is the registered scheduler class for normal process: kernel/sche_fair.c
-Link: 
+
+Link:
+
 * https://github.com/ianohara/linux-rt-examples
 * https://man7.org/tlpi/code/online/dist/procpri/demo_sched_fifo.c.html
 * https://wiki.linuxfoundation.org/realtime/documentation/howto/applications/application_base
