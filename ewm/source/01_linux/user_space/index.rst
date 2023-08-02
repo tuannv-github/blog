@@ -23,3 +23,5 @@ User Space
    display_server
    display_client
    desktop_enviroment
+   ls
+   stat
