@@ -73,8 +73,45 @@ Merge
          /         \
     D---E---F---G---H master
 
+Fast Forward Merge
+------------------
+
+A fast-forward merge can occur when there is a linear path from the current branch tip to the target branch. 
+
+.. image:: imgs/fast_forward_merge.svg
+
+3-way Merge
+------------
+
+3-way merges use a dedicated commit to tie together the two histories. The nomenclature comes from the fact that Git uses three commits to generate the merge commit: the two branch tips and their common ancestor.
+
+.. image:: imgs/3_way_merge.svg
+
+Squash Merge
+------------
+
+.. image:: imgs/squash_merge.png
+
 Pull
 ====
+
+.. code-block:: 
+  
+  git pull [<options>] [<repository> [<refspec>…​]]
+
+.. code-block:: C
+
+        A---B---C master on origin
+      /
+  D---E---F---G master
+      ^
+      origin/master in your repository
+
+.. code-block:: c
+
+        A---B---C origin/master
+      /           \
+    D---E---F---G---H master
 
 Clean
 =====
@@ -92,13 +129,13 @@ Remove untracked files from the working tree
       - Description
     * - :code:`--dry-run`
       - :code:`-n`
-      - Don’t actually remove anything, just show what would be done.
+      - Don't actually remove anything, just show what would be done.
     * - :code:`--force`
       - :code:`-f`
       - If the Git configuration variable clean.requireForce is not set to false, git clean will refuse to delete files or directories unless given -f or -i.
     * - 
       - :code:`-x`
-      - Don’t use the standard ignore rules
+      - Don't use the standard ignore rules
     * - 
       - :code:`-X`
       - Remove only files ignored by Git

@@ -6,6 +6,7 @@ Tools
    gdb
    valgrind
    docker/index
-   git
+   git/index
    ssh
    octave
+   make/index
