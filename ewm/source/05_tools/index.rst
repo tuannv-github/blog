@@ -10,3 +10,5 @@ Tools
    ssh
    octave
    make/index
+   vim
+   cscope

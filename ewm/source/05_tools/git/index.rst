@@ -153,7 +153,23 @@ Reset current HEAD to the specified state
 
 [Dangerous] Clear all changes
 =============================
+
+Clear:
+ * Tracked files: :code:`git reset`
+ * Untracked files: :code:`git clean`
+
+   * Files without ignored files: :code:`git clean -fd`
+   * Files include ignored files: :code:`git clean -fdx`
+   * Ignored files: :code:`git clean -fdX`
+
 .. code-block::
 
     git reset --hard
     git clean -fdx
+
+Rebase
+======
+
+.. figure:: imgs/rebase.png
+
+Treat merge commit as a single commit when rebasing :code:`--preserve-merges`
