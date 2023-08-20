@@ -12,3 +12,4 @@ Tools
    make/index
    vim
    cscope
+   find
