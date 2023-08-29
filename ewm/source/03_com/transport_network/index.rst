@@ -16,3 +16,4 @@ Transport Network
 
    pfm
    mpls
+   bcm/broadcom_ethernet_swiches_and_switch_fabric_devices
