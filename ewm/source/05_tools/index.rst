@@ -9,7 +9,8 @@ Tools
    git/index
    ssh
    octave
-   make/index
+   build_system/make/index
    vim
    cscope
    find
+   sublime/sublime
