@@ -80,40 +80,37 @@ The id command is preferred command to list groups a user belongs to On Linux or
 
 .. code-block:: bash
 
-    id -Gn userNameHere
+    id -Gn <username>
 
-User Creation
-=============
+User/Group Creation
+===================
 
-.. code-block:: bash
+.. code-block::
 
-  useradd username
+  useradd <username>
 
 * When executed without any option, useradd creates a new user account using the default settings specified in the :code:`/etc/default/useradd` file.
 * The command adds an entry to the :code:`/etc/passwd`, :code:`/etc/shadow`, :code:`/etc/group` and :code:`/etc/gshadow` files.
 
 To be able to log in as the newly created user, password has to be set for the new user.
 
-.. code-block:: bash
+.. code-block::
 
-  passwd username
+  passwd <username>
 
-Group Creation
-==============
+.. code-block::
 
-.. code-block:: bash
-
-  groupadd secondarygroup
+  groupadd <secondarygroup>
 
 While a user account can be part of multiple groups, one of the groups is always the **primary group** and the others are **secondary groups**. The user’s login process and files and folders the user creates will be assigned to the primary group.
 
-.. code-block:: bash
+.. code-block::
 
-  usermod -g primarygroup username
+  usermod -g <primarygroup> username
 
-.. code-block:: bash
+.. code-block::
 
-  usermod -a -G secondarygroup username
+  usermod -a -G <secondarygroup> username
 
 .. list-table:: usermod
   :widths: 25 25 50
@@ -131,6 +128,14 @@ While a user account can be part of multiple groups, one of the groups is always
   * - :code:`--gid`
     - :code:`-g`
     - The name or numerical ID of the user's new primary group. The group must exist.
+
+User/Group Deletion
+===================
+
+.. code-block:: 
+
+    userdel <username>
+    groupdel <groupname>
 
 login.defs
 ==========
