@@ -20,8 +20,6 @@ User Space
    logging/index
 
    lpi/index
-   display_server
-   display_client
-   desktop_enviroment
+   linux_gui/index
    ls
    stat
