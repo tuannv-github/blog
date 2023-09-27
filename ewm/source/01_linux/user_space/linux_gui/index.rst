@@ -6,7 +6,6 @@ Linux Graphical User Interface
 
     display_server
     display_client
-    desktop_environment
 
 .. image:: imgs/x_window_system_architecture.png
 
