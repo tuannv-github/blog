@@ -1,5 +1,8 @@
+=========
 Buildroot
 =========
+
+Buildroot is a simple, efficient and easy-to-use tool to generate embedded Linux systems through cross-compilation.
 
 * Linux Kernel: bzImage
 * Rootfs: rootfs.ext2
@@ -7,7 +10,25 @@ Buildroot
 .. code-block:: 
 
     make menuconfig
+    make busybox-menuconfig 
     make linux-menuconfig
+
+BusyBox
+=======
+
+BusyBox **combines tiny versions of many common UNIX utilities into a single small executable**. It provides replacements for most of the utilities you usually find in GNU fileutils, shellutils, etc. 
+
+The utilities in BusyBox generally have fewer options than their full-featured GNU cousins; however, the options that are included provide the expected functionality and behave very much like their GNU counterparts.
+
+BusyBox provides a fairly complete environment for any small or embedded system.
+
+.. code-block:: 
+
+    make menuconfig
+    make
+
+Buildroot using QEMU
+====================
 
 .. code-block:: bash
 

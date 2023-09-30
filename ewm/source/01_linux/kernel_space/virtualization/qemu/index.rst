@@ -1,8 +1,6 @@
+====
 Qemu
 ====
-
-QEMU:
-----
 
 * Emulator
 * Virtualizer

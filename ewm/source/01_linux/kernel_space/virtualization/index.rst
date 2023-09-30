@@ -5,6 +5,7 @@ Virtualization
 .. toctree:: 
     
     qemu/index
+    kvm/index
 
 Hypervisor
 ----------
@@ -45,5 +46,7 @@ KVM (Kernel Virtual Machine) is a Linux kernel module that allows a user space p
 QEMU can make use of KVM when running a target architecture that is the same as the host architecture. 
 
 To use KVM pass --enable-kvm to QEMU.
+
+Link: https://www.polarsparc.com/xhtml/Linux-KVM.html
 
 .. image:: imgs/kvm-01.png
