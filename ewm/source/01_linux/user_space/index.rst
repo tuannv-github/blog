@@ -4,22 +4,14 @@ User Space
 
 .. toctree::
 
-   man
-   alias
-   du
-   apt
-   cron
-   fifo
-   pam
-   fs/index
    user/user
    shell/index
    process/index
    network/index
    datetime/index
    logging/index
-
+   commands/index
+   fs/index
    lpi/index
-   linux_gui/index
-   ls
-   stat
+   gui/index
+   pam

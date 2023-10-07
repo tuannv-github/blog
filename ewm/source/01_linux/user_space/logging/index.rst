@@ -275,6 +275,9 @@ logrotatetest.sh
   date >> /tmp/logrotatetest
   logrotate logrotatetest.conf >> /tmp/logrotatetest 2>&1
 
+Log generation
+==============
+
 .. code-block:: bash
 
   logger -p local3.notice -t "logrotatetest" "Hello logrotatetest"

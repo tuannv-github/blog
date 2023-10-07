@@ -1,3 +1,4 @@
+=====
 Linux
 =====
 
@@ -5,4 +6,4 @@ Linux
 
    kernel_space/index
    user_space/index
-   general/process/index
+   yocto/index
