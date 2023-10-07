@@ -4,8 +4,8 @@ Kernel Space
 
 .. toctree::
 
-   lkd/index
-   ldd/index
-   virtualization/index
    buildroot/index
+   virtualization/index
    mmu/index
+   ldd/index
+   lkd/index

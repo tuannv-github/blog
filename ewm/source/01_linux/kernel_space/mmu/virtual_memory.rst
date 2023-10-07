@@ -4,8 +4,8 @@ Virtual Memory
 
 .. image:: imgs/process_virtual_address_space.png
 
-x86
----
+Virtual Memory in x86
+---------------------
 
 .. code-block::
 
@@ -93,8 +93,8 @@ x86
             0xf7ffd000 0xf7ffe000     0x1000    0x2b000 /usr/lib/i386-linux-gnu/ld-2.31.so
             0xfffdc000 0xffffe000    0x22000        0x0 [stack]
 
-x86_64
-------
+Virtual Memory in x86_64
+------------------------
 
 .. code-block:: 
 
