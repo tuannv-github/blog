@@ -173,3 +173,32 @@ Rebase
 .. figure:: imgs/rebase.png
 
 Treat merge commit as a single commit when rebasing :code:`--preserve-merges`
+
+Submodule
+=========
+
+Summary Submodule
+-----------------
+
+.. code-block:: 
+
+  git submodule summary
+
+Add Submodule
+-------------
+
+.. code-block:: 
+
+  git submodule add <url> <submodule_path>
+
+2 new files:
+
+* :code:`.gitmodules`
+
+.. code-block:: 
+
+  [submofule "<name>"]
+    path = <path>
+    url = <url>
+
+* A diff file decribe about submodule
