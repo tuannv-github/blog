@@ -161,3 +161,12 @@ login.defs
   # System accounts
   #SYS_GID_MIN              100
   #SYS_GID_MAX              999
+
+Update User Name
+================
+
+.. code-block:: 
+
+  usermod -l new-name old-name
+
+  usermod -u UID username
