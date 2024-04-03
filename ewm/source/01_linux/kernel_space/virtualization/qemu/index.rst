@@ -1,6 +1,6 @@
-====
-Qemu
-====
+===========================
+QEMU - Open-source emulator
+===========================
 
 * Emulator
 * Virtualizer
